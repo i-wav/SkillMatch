@@ -19,14 +19,19 @@ def recommend_job_titles(user_skills):
     return recommendations
 
 # Streamlit UI
-st.title("Job Recommendation System")
-user_input = st.text_area("Enter your skills:", "")
+st.sidebar.title("Job Recommendation System")
+user_input = st.sidebar.text_area("Enter your skills:", "")
 
-if st.button("Get Recommendations"):
+
+if st.sidebar.button("Get Recommendations"):
+
     if user_input:
         recommendations = recommend_job_titles(user_input)
-        st.write("### Recommended Job Titles:")
+        st.sidebar.write("### Recommended Job Titles:")
+
+
         for job in recommendations:
-            st.write(f"- {job}")
+            st.sidebar.write(f"- {job}")
+
     else:
         st.warning("Please enter your skills.")
