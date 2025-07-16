@@ -37,8 +37,8 @@ def suggest_additional_skills(user_skills, job_skills_list):
     return formatted_skills[:10]  # Limit to 10 additional skills
 
 # --- UI Design ---
-st.markdown("<h1 style='text-align: center; color: #4A90E2;'>🔍 Skill Match</h1>", unsafe_allow_html=True)
-st.markdown("<h5 style='text-align: center; color: #666;'>Find the best job roles based on your skills</h5>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #4A90E2;'>Skill Match</h1>")
+st.markdown("<h5 style='text-align: center; color: #666;'>Find the best job roles based on your skills</h5>")
 st.write("---")
 
 # Create two sections
