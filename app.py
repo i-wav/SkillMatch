@@ -45,7 +45,7 @@ st.write("---")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.subheader("💡 Enter Your Skills")
+    st.subheader("Enter Your Skills")
     user_input = st.text_area("Skills (comma-separated):", placeholder="e.g., Python, Data Analysis, Machine Learning")
     
     if st.button("Get Recommendations", use_container_width=True):
@@ -54,14 +54,14 @@ with col1:
             missing_skills = suggest_additional_skills(user_input, job_skills_list)
 
             with col2:
-                st.subheader("🎯 Recommended Job Titles")
+                st.subheader("Recommended Job Titles")
                 for job_title in recommended_jobs:
-                    st.markdown(f"✅ **{job_title}**", unsafe_allow_html=True)
+                    st.markdown(f"**{job_title}**", unsafe_allow_html=True)
 
                 if missing_skills:
-                    st.subheader("📌 Additional Skills You Might Need")
+                    st.subheader("Additional Skills You Might Need")
                     for skill in missing_skills:
                         st.warning(f"🔹 {skill}")
 
         else:
-            st.error("⚠️ Please enter your skills to get recommendations.")
+            st.error("Please enter your skills to get recommendations.")
