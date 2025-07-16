@@ -8,7 +8,6 @@ df_tech2 = pd.read_csv("./data/df_tech2.csv")  # Ensure correct path
 vectorizer = joblib.load("./models/vectorizer.pkl")
 tfidf_matrix = joblib.load("./models/tfidf_matrix.pkl")
 
-# Streamlit Page Config
 st.set_page_config(page_title="Job Recommendation System", layout="wide")
 
 # Function to Recommend Jobs
@@ -31,17 +30,15 @@ def suggest_additional_skills(user_skills, job_skills_list):
 
     missing_skills = list(all_required_skills - user_skills_set)
 
-    # Format skills to start with capital letters
     formatted_skills = [" ".join([word.capitalize() for word in skill.split()]) for skill in missing_skills]
 
-    return formatted_skills[:10]  # Limit to 10 additional skills
+    return formatted_skills[:10]  
 
 # --- UI Design ---
-st.markdown("<h1 style='text-align: center; color: #4A90E2;'>Skill Match</h1>")
-st.markdown("<h5 style='text-align: center; color: #666;'>Find the best job roles based on your skills</h5>")
+st.markdown("<h1 style='text-align: center; color: #4A90E2;'>Skill Match</h1>", unsafe_allow_html=True)
+st.markdown("<h5 style='text-align: center; color: #666;'>Find the best job roles based on your skills</h5>", unsafe_allow_html=True)
 st.write("---")
 
-# Create two sections
 col1, col2 = st.columns([1, 2])
 
 with col1:
